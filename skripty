@@ -11,3 +11,8 @@ if [suma celkem] > List.Average(#"Seskupené řádky"[suma celkem]) then "nadpru
 ______________________________________
 
 srazky kumulativne:=SUMX(FILTER(ALL(data);data[rok] = MAX(data[rok]) && data[mesic] <=MAX(data[mesic]));data[srazky])
+
+_______________________________________
+
+
+srazky kumulativne predchozi rok:=SUMX(FILTER(ALL(data);data[rok] = MAX(data[rok])-1 &&data[mesic] <=MAX(data[mesic]));data[srazky])
