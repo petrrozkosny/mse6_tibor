@@ -1,1 +1,3 @@
 Duration.Days( DateTime.Date(DateTime.FixedLocalNow()) -  [datum])
+
+ Zdroj = try Excel.Workbook(File.Contents("C:\Users\Student\Downloads\mse6-data.xlsx"), null, true) otherwise Excel.Workbook(File.Contents("C:\Users\Student\Downloads\mse-data.xlsx"), null, true),
