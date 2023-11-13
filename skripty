@@ -4,3 +4,7 @@ Duration.Days( DateTime.Date(DateTime.FixedLocalNow()) -  [datum])
 _____________________________________________________
 
 ( if [srazky] = null then 0 else [srazky])+ (if [snih] = null then 0 else [snih])
+
+____________________________________________
+
+if [suma celkem] > List.Average(#"Seskupené řádky"[suma celkem]) then "nadprumerne" else "podprumerne"
