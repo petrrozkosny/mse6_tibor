@@ -8,3 +8,6 @@ _____________________________________________________
 ____________________________________________
 
 if [suma celkem] > List.Average(#"Seskupené řádky"[suma celkem]) then "nadprumerne" else "podprumerne"
+______________________________________
+
+srazky kumulativne:=SUMX(FILTER(ALL(data);data[rok] = MAX(data[rok]) && data[mesic] <=MAX(data[mesic]));data[srazky])
