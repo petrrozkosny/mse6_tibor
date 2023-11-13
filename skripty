@@ -1,0 +1,1 @@
+Duration.Days( DateTime.Date(DateTime.FixedLocalNow()) -  [datum])
