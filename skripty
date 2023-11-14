@@ -27,3 +27,16 @@ suma srazky:=SUM(data[srazky])
 _________________________________
 
 srazky graf:=IF(FIRSTNONBLANK(typ_obdobi[typ_obdobi];TRUE()) = "kumulativne";[suma srazek kumulativne];[suma srazky])
+
+===================================================================================================================================
+______________________________________________________________________
+
+suma srazek kumulativne vloni:=SUMX(FILTER(ALL(data);data[mesic] <=MAX(data[mesic]) && data[rok] = MAX(data[rok]) - 1 && data[lokalita] = MAX(data[lokalita]));data[srazky])
+____________________________________________________________________
+suma srazek vloni:=SUMX(FILTER(ALL(data);data[rok] = MAX(data[rok]) - 1 && data[mesic] = MAX(data[mesic]) && data[lokalita]  = MAX(data[lokalita]));data[srazky])
+_____________________________________________________
+
+srazky graf sekundarni:=IF(FIRSTNONBLANK(typ_obdobi[typ_obdobi];TRUE()) = "kumulativne";[suma srazek kumulativne vloni];[suma srazek vloni])
+____________________________
+srazky graf2:=IF(FIRSTNONBLANK(sekundarni_osa[sekundarni_osa];TRUE())="ano";[srazky graf sekundarni];BLANK())
+_______________________________
