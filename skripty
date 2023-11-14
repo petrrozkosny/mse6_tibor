@@ -42,3 +42,9 @@ srazky graf2:=IF(FIRSTNONBLANK(sekundarni_osa[sekundarni_osa];TRUE())="ano";[sra
 _______________________________
 
 =CUBEVALUE("ThisWorkbookDataModel";"[Measures].[suma srazky]";"[data].[rok].["&pomocna!B4&"]")
+
+
+_____________________
+
+
+suma srazek mezirocne:=IFERROR([suma srazky] / SUMX(FILTER(ALL(data);data[rok] = MAX(data[rok]) - 1);data[srazky]) - 1;BLANK())
