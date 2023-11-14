@@ -16,3 +16,14 @@ _______________________________________
 
 
 srazky kumulativne predchozi rok:=SUMX(FILTER(ALL(data);data[rok] = MAX(data[rok])-1 &&data[mesic] <=MAX(data[mesic]));data[srazky])
+___________________________________
+
+suma srazek kumulativne:=SUMX(  filter(ALL(data);data[rok] = MAX(data[rok]) && data[mesic] <=MAX(data[mesic]) && data[lokalita] = MAX(data[lokalita]));data[srazky])
+
+_________________________________
+
+suma srazky:=SUM(data[srazky])
+
+_________________________________
+
+srazky graf:=IF(FIRSTNONBLANK(typ_obdobi[typ_obdobi];TRUE()) = "kumulativne";[suma srazek kumulativne];[suma srazky])
