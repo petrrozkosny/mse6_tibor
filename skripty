@@ -40,3 +40,5 @@ srazky graf sekundarni:=IF(FIRSTNONBLANK(typ_obdobi[typ_obdobi];TRUE()) = "kumul
 ____________________________
 srazky graf2:=IF(FIRSTNONBLANK(sekundarni_osa[sekundarni_osa];TRUE())="ano";[srazky graf sekundarni];BLANK())
 _______________________________
+
+=CUBEVALUE("ThisWorkbookDataModel";"[Measures].[suma srazky]";"[data].[rok].["&pomocna!B4&"]")
